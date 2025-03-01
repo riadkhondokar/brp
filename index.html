@@ -7,34 +7,40 @@
   <title>JavaScript label example</title>
   <style>
     button {
-      font-family: "helvetica neue", helvetica, sans-serif;
-      letter-spacing: 1px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       text-align: center;
-      border: 2px solid rgb(200 200 0 / 0.6);
-      background: rgba(0, 217, 217, 0.6);
-      color: rgb(100 0 0 / 1);
-      box-shadow: 1px 1px 2px rgb(0 0 200 / 0.4);
-      border-radius: 10px;
-      padding: 3px 10px;
+      border: 2px solid #ccc;
+      background: #007BFF;
+      color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px 20px;
       cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 
 <body>
-  <button type="button">Player 1: Chris</button>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <button type="button" onclick="displayText()">Submit</button>
 
   <script>
-    const button = document.querySelector("button");
-
-    button.addEventListener("click", updateName);
-
-    function updateName() {
-      const name = prompt("Enter a new name");
-      button.textContent = `Player 1: ${name}`;
+    function displayText() {
+      var name = document.getElementById("name").value;
+      alert("Hello, " + name + "!");
     }
   </script>
+  <h1>Riyad</h1>
+
 </body>
 
 </html>
